@@ -25,7 +25,7 @@ def get_all_inputs_classes():
                     and obj != FuserInput
                 ):
                     inputs_classes.append(obj)
-        except (ImportError, ModuleNotFoundError) as e:
+        except (ImportError, ModuleNotFoundError, NameError, AttributeError) as e:
             # Skip plugins that fail to import due to missing optional dependencies
             logging.warning(f"Skipping plugin {plugin} due to import error: {e}")
             continue
